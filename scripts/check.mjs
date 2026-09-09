@@ -1,4 +1,5 @@
 import { readdir, readFile, stat } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -58,7 +59,12 @@ for (const [file, html] of documents) {
 const css = await readFile(path.join(dist, 'assets/site.css'), 'utf8');
 for (const match of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) reference(match[1], 'assets/site.css');
 const config = JSON.parse(await readFile(path.join(root, 'site.config.json'), 'utf8'));
-if ((await readFile(path.join(dist, 'CNAME'), 'utf8')).trim() !== config.domain) errors.push('CNAME does not match site.config.json');
+const cnamePath = path.join(dist, 'CNAME');
+if (config.domain) {
+  if ((await readFile(cnamePath, 'utf8')).trim() !== config.domain) errors.push('CNAME does not match site.config.json');
+} else if (existsSync(cnamePath)) {
+  errors.push('CNAME should be absent when site.config.json has no custom domain');
+}
 for (const name of ['.nojekyll', 'news.atom', 'sitemap.xml', 'robots.txt', '404.html', 'orcinus-privacy/index.html', 'number-nibbler-privacy/index.html']) if (!fileSet.has(name)) errors.push(`Missing ${name}`);
 let bytes = 0;
 for (const file of files) {

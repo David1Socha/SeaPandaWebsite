@@ -122,5 +122,10 @@ await writeFile(path.join(dist, 'news.atom'), `<?xml version="1.0" encoding="UTF
 await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(route => `<url><loc>${urlFor(route)}</loc></url>`).join('')}</urlset>\n`);
 await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${config.url}/sitemap.xml\n`);
 await writeFile(path.join(dist, '.nojekyll'), '');
-await writeFile(path.join(dist, 'CNAME'), `${config.domain}\n`);
+const cnamePath = path.join(dist, 'CNAME');
+if (config.domain) {
+  await writeFile(cnamePath, `${config.domain}\n`);
+} else {
+  await rm(cnamePath, { force: true });
+}
 console.log(`Built ${routes.length} content pages + 404 and legacy news redirects in ${dist}${base ? ` (base: /${base})` : ''}.`);
