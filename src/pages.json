@@ -1,0 +1,78 @@
+[
+  {
+    "slug": "home",
+    "title": "Sea Panda Creative",
+    "description": "Games and more from Sea Panda Creative. Created by David and Adalia Socha.",
+    "hero": {
+      "title": "Sea Panda Creative",
+      "image": "/assets/images/sea_panda_logo.png",
+      "imageAlt": "Sea Panda Creative logo"
+    }
+  },
+  {
+    "slug": "team",
+    "title": "Team",
+    "description": "Team — games from Sea Panda Creative.",
+    "hero": {
+      "title": "Team"
+    }
+  },
+  {
+    "slug": "games",
+    "title": "Games",
+    "description": "Games — games from Sea Panda Creative.",
+    "hero": {
+      "title": "Games"
+    }
+  },
+  {
+    "slug": "polytropos",
+    "title": "Polytropos: A Tactical Odyssey",
+    "description": "Polytropos: A Tactical Odyssey — games from Sea Panda Creative.",
+    "hero": {
+      "title": "Polytropos: A Tactical Odyssey",
+      "image": "/assets/images/TrailerThumbnail.png",
+      "imageAlt": "Polytropos: A Tactical Odyssey trailer",
+      "video": "https://www.youtube.com/watch?v=1wzSNcqpMRQ"
+    }
+  },
+  {
+    "slug": "orcinus",
+    "title": "OrcinUS: Orca Pod Rescue",
+    "description": "OrcinUS: Orca Pod Rescue — games from Sea Panda Creative.",
+    "hero": {
+      "title": "OrcinUS: Orca Pod Rescue",
+      "image": "/assets/images/play_store_feature_icon_1024_500.png",
+      "imageAlt": "OrcinUS: Orca Pod Rescue trailer",
+      "video": "https://www.youtube.com/watch?v=0tPnz0OLNPc",
+      "button": {
+        "label": "Download Now For Free",
+        "href": "#downloads"
+      }
+    }
+  },
+  {
+    "slug": "number-nibbler",
+    "title": "Number Nibbler",
+    "description": "Number Nibbler — games from Sea Panda Creative.",
+    "hero": {
+      "title": "Number Nibbler"
+    }
+  },
+  {
+    "slug": "orcinus-privacy",
+    "title": "OrcinUS Privacy",
+    "description": "OrcinUS: Pod Rescue collects no personal information.",
+    "hero": {
+      "title": "OrcinUS Privacy"
+    }
+  },
+  {
+    "slug": "number-nibbler-privacy",
+    "title": "Number Nibbler Privacy",
+    "description": "Number Nibbler collects no personal information.",
+    "hero": {
+      "title": "Number Nibbler Privacy"
+    }
+  }
+]

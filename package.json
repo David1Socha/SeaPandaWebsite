@@ -1,0 +1,13 @@
+{
+  "name": "sea-panda-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sea Panda Creative — portable static website",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "start": "node scripts/serve.mjs"
+  }
+}
