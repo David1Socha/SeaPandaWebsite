@@ -26,11 +26,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build and check
-        env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: |
-          node scripts/build.mjs --base "$BASE_PATH"
-          node scripts/check.mjs --base "$BASE_PATH"
+          node scripts/build.mjs --base ""
+          node scripts/check.mjs --base ""
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
         with:
